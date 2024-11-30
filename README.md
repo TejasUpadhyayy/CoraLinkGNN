@@ -85,17 +85,16 @@ GAT uses attention mechanisms to dynamically assign importance to neighbors.
 
 ---
 
-## **Results**
+## **Summary of Results**
 
 | Model       | Test AUC | Test AP |
 |-------------|----------|---------|
-| **GCN**     | 0.9500   | 0.9470  |
-| **GraphSAGE** | 0.9520 | 0.9490  |
-| **GAT**     | 0.9550   | 0.9510  |
+| **GCN**     | 0.9268   | 0.9324  |
+| **GraphSAGE** | 0.7394 | 0.7423  |
+| **GAT**     | 0.5803   | 0.5754  |
 
-### **Analysis**
-- **GAT** achieved the highest accuracy due to its ability to assign dynamic weights to neighboring nodes.
-- **GraphSAGE** outperformed GCN because of its flexible aggregation strategies.
+### **Best Model**
+- **GCN** emerged as the best-performing model in the second notebook, achieving the highest **Test AUC (0.9268)** and **Test AP (0.9324)**.
 
 ---
 
