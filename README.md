@@ -30,28 +30,16 @@ This repository is inspired by the research paper **"Predicting the Future of AI
 ### **Graph Neural Networks (GNNs)**
 GNNs extend traditional neural networks to graph-structured data by learning node embeddings that capture both local and global graph structures. They work by propagating and aggregating information between neighboring nodes.
 
-**General Framework**:
-\[
-h_v^{(l+1)} = \text{AGGREGATE}\big(\{f(h_u^{(l)}, h_v^{(l)}, e_{uv}) \mid u \in \mathcal{N}(v)\}\big)
-\]
-Where:
-- \( h_v^{(l)} \): Embedding of node \( v \) at layer \( l \).
-- \( \mathcal{N}(v) \): Neighboring nodes of \( v \).
-- \( f \): Message-passing function (e.g., edge-weighted summation).
-- \( \text{AGGREGATE} \): Aggregation function (e.g., mean, max, or sum).
+![image](https://github.com/user-attachments/assets/b3b400e6-5320-41d4-9f45-896e5aa9d7be)
+
 
 ---
 
 ### **Link Prediction**
 The link prediction task involves estimating the probability \( P(u, v) \) that an edge exists between two nodes \( u \) and \( v \). The prediction is based on the embeddings learned by the GNN.
 
-**Decoder Equation**:
-\[
-P(u, v) = \sigma(z_u \cdot z_v)
-\]
-Where:
-- \( z_u, z_v \): Node embeddings for \( u \) and \( v \).
-- \( \sigma \): Sigmoid activation function to normalize predictions.
+![image](https://github.com/user-attachments/assets/a749ce3f-588e-4ce0-abb1-e25b5a3733c2)
+
 
 ---
 
@@ -60,22 +48,14 @@ Where:
 #### **1. Graph Convolutional Networks (GCN)**
 GCNs perform spectral convolutions to capture local neighborhood information.
 
-**Key Equation**:
-\[
-H^{(l+1)} = \sigma\big(\hat{D}^{-1/2} \hat{A} \hat{D}^{-1/2} H^{(l)} W^{(l)}\big)
-\]
-Where:
-- \( \hat{A} = A + I \): Adjacency matrix with self-loops.
-- \( \hat{D} \): Degree matrix of \( \hat{A} \).
-- \( W^{(l)} \): Trainable weights at layer \( l \).
+![image](https://github.com/user-attachments/assets/7c67baf4-aede-424c-b873-bc09cd1d1e53)
+
 
 #### **2. GraphSAGE**
 GraphSAGE introduces inductive learning by sampling fixed-size neighborhoods.
 
-**Key Equation**:
-\[
-h_v^{(l+1)} = \sigma\big(W^{(l)} \cdot \text{AGGREGATE}(\{h_u^{(l)} \mid u \in \mathcal{N}(v)\})\big)
-\]
+![image](https://github.com/user-attachments/assets/61f504b1-2679-485e-817d-40aa4a6b8170)
+
 Common aggregators include:
 - **Mean pooling**
 - **Max pooling**
@@ -84,18 +64,8 @@ Common aggregators include:
 #### **3. Graph Attention Networks (GAT)**
 GAT uses attention mechanisms to dynamically assign importance to neighbors.
 
-**Attention Coefficients**:
-\[
-e_{uv} = \text{LeakyReLU}\big(a^\top [W h_u \| W h_v]\big)
-\]
-\[
-\alpha_{uv} = \frac{\exp(e_{uv})}{\sum_{k \in \mathcal{N}(v)} \exp(e_{vk})}
-\]
+![image](https://github.com/user-attachments/assets/b934fc22-c861-4758-9d32-c1022cf967ac)
 
-**Node Update**:
-\[
-h_v^{(l+1)} = \sigma\big(\sum_{u \in \mathcal{N}(v)} \alpha_{uv} W h_u\big)
-\]
 
 ---
 
