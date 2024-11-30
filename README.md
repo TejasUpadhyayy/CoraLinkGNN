@@ -110,16 +110,8 @@ h_v^{(l+1)} = \sigma\big(\sum_{u \in \mathcal{N}(v)} \alpha_{uv} W h_u\big)
    - Negative edges are sampled to balance the dataset for binary classification.
 
 ### **Training**
-- **Loss Function**: Binary Cross-Entropy Loss
-\[
-\mathcal{L} = - \frac{1}{N} \sum_{i=1}^{N} \big[y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)\big]
-\]
-Where:
-- \( y_i \): Ground truth label.
-- \( \hat{y}_i \): Predicted probability.
+![image](https://github.com/user-attachments/assets/3d06dded-df67-4191-be94-455116e70f9e)
 
-- **Optimizer**: Adam
-- **Evaluation Metrics**: AUC, AP
 
 ---
 
