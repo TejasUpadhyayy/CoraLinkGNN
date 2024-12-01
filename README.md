@@ -21,7 +21,7 @@ This repository is inspired by the research paper **"Predicting the Future of AI
 - **Key Metrics**:
   - **AUC (Area Under the ROC Curve)**: Evaluates the classification performance.
   - **AP (Average Precision)**: Measures the precision-recall balance.
-- **Best Model**: GAT achieved the highest performance with a Test AUC of **0.9550** and Test AP of **0.9510**.
+- GCN emerged as the best-performing model in the second notebook, achieving the highest Test AUC (0.9268) and Test AP (0.9324)
 
 ---
 
